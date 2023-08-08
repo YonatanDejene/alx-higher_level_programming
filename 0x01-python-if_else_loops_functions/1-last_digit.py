@@ -5,7 +5,7 @@ digits = abs(number) % 10
 if number < 0:
     digits = -digits
 print("Last digit of {} is {} and is ".format(number, digits), end="")
-elif digits == 0:
+if digits == 0:
     print("0")
 elif digits > 5:
     print("greater than 5")
