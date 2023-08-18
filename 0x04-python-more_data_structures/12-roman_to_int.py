@@ -27,13 +27,13 @@ def roman_to_int(roman_string):
     for c in roman_string:
         for rNum in list_keys:
             if rNum == c:
-                if rom_n.get(c) <= lastRom:
+                if romNum.get(c) <= lastRom:
                     num += to_subtract(listNum)
-                    listNum = [rom_n.get(c)]
+                    listNum = [romNum.get(c)]
                 else:
-                    listNum.append(rom_n.get(c))
+                    listNum.append(romNum.get(c))
 
-                lastRom = rom_n.get(c)
+                lastRom = romNum.get(c)
 
     num += to_subtract(listNum)
 
