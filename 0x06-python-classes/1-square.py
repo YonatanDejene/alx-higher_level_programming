@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Square: Defined'''
 
+
 class Square:
     '''Square represented'''
 
