@@ -1,4 +1,6 @@
 #!/usr/bin/python3
-class Square:
+#defines a class called square.
 
+class Square:
+#Represent a square
     pass
