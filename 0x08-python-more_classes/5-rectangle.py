@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-'''Defines a class Rectangle.'''
+'''Defines class Rectangle.'''
+
 
 class Rectangle:
-    '''Represent a rectangle.'''
+    '''Represents rectangle.'''
 
     def __init__(self, width=0, height=0):
         '''Initializing new Rectangle.
@@ -53,7 +54,7 @@ class Rectangle:
     def __str__(self):
         '''Returns printable representation of the Rectangle.
 
-        Represents the rectangle with the # character.
+        Represents rectangle with the # character.
         '''
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -70,3 +71,7 @@ class Rectangle:
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
+
+    def __del__(self):
+        '''Prints message for every deletion of a Rectangle.'''
+        print("Bye rectangle...")

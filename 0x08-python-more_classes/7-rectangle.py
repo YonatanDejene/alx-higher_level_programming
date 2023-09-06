@@ -1,8 +1,17 @@
 #!/usr/bin/python3
-'''Defines a class Rectangle.'''
+'''Defines class Rectangle.'''
+
 
 class Rectangle:
-    '''Represent a rectangle.'''
+    '''Represents rectangle.
+
+    Attributes:
+        number_of_instances (int): Number of Rectangle instances.
+        print_symbol (any): Symbol used for string representation.
+    '''
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         '''Initializing new Rectangle.
@@ -11,6 +20,7 @@ class Rectangle:
             width (int): Width of the new rectangle.
             height (int): Height of the new rectangle.
         '''
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -53,14 +63,14 @@ class Rectangle:
     def __str__(self):
         '''Returns printable representation of the Rectangle.
 
-        Represents the rectangle with the # character.
+        Represents rectangle with the # character.
         '''
         if self.__width == 0 or self.__height == 0:
             return ("")
 
         rect = []
         for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
+            [rect.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 rect.append("\n")
         return ("".join(rect))
@@ -70,3 +80,8 @@ class Rectangle:
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
+
+    def __del__(self):
+        '''Prints message for every deletion of a Rectangle.'''
+        type(self).number_of_instances -= 1
+        print("Bye rectangle...")
